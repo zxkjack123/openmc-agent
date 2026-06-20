@@ -1,0 +1,23 @@
+name: "godiva"
+category: "criticality"
+description: >
+  GODIVA bare highly-enriched uranium sphere. A solid sphere of HEU metal
+  (93.71 wt% U-235) with radius 8.7407 cm and density 18.74 g/cm³.
+  Vacuum boundary condition. Originally performed at Los Alamos in the
+  1950s, this is one of the most well-characterized fast critical
+  benchmarks.
+geometry: "CSG"
+source: "ICSBEP HEU-MET-FAST-001"
+metrics:
+  k_eff:
+    reference: 0.9992
+    tolerance_pcm: 200
+settings:
+  particles: 10000
+  batches: 150
+  inactive: 50
+cross_sections: "ENDF/B-VIII.0"
+notes: >
+  Three-isotope HEU approximation (U-234 1.02%, U-235 93.71%, U-238 5.27% wt%).
+  Actual GODIVA fuel contains trace impurities and slightly different enrichment.
+  Tolerance of 200 pcm accommodates this approximation.
