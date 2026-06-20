@@ -407,7 +407,7 @@ context:
 
 ### Phase 2: LocalExecutor Implementation
 
-#### Task 2.1: 实现 LocalExecutor 类
+#### ✅ Task 2.1: 实现 LocalExecutor 类
 - **目标**：创建 `backends/local_executor.py`，实现 BackendExecutor 接口（prepare/run/cleanup），通过 subprocess 运行 OpenMC 模型
 - **依赖**：无
 - **input_contracts**：`[]`
