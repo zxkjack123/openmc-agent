@@ -374,7 +374,7 @@ context:
   - 三同位素成分近似可能导致 k-eff 偏离参考值 >200 pcm。缓解：benchmark 使用 200 pcm tolerance 吸收小偏差；若 E2E 测试失败，调整成分 weight fractions
   - [影响预览: 无跨文件引用 — model.py 是独立脚本]
 
-#### Task 1.3: 创建 README.md
+#### ✅ Task 1.3: 创建 README.md
 - **目标**：创建 `benchmarks/criticality/godiva/README.md` 记录 GODIVA 出处、物理描述和运行说明
 - **依赖**：无
 - **input_contracts**：`[]`
