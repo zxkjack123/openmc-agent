@@ -533,7 +533,7 @@ context:
     - **expected**: `>=1`
 - **潜在风险**：无。
 
-#### Task 3.1: 创建 E2E 集成测试
+#### ✅ Task 3.1: 创建 E2E 集成测试
 - **目标**：创建 `tests/test_e2e_godiva_pipeline.py`，通过 LocalExecutor 运行 GODIVA 模型，提取 k-eff 与 benchmark.yaml 参考值对比
 - **依赖**：T1.1, T1.2, T2.1（需要 benchmark.yaml, model.py, LocalExecutor 三者均存在）
 - **input_contracts**：
