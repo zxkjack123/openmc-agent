@@ -307,7 +307,7 @@ context:
     - **expected**: `exit 0`
 - **潜在风险**：无 — schema 明确定义，字段值均已知。
 
-#### Task 1.2: 创建 model.py
+#### ✅ Task 1.2: 创建 model.py
 - **目标**：创建 `benchmarks/criticality/godiva/model.py`，构建 GODIVA 裸球 OpenMC 模型并导出 XML
 - **依赖**：无（但读取 benchmark.yaml 用于对照验证）
 - **input_contracts**：`[{type: "file", identifier: "benchmarks/criticality/godiva/benchmark.yaml", contract_signature: "exports yaml fields: name, category, description, geometry, source, metrics.k_eff, settings, cross_sections"}]`
