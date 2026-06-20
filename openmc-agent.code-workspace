@@ -1,0 +1,29 @@
+{
+    "folders": [
+        {
+            "path": ".",
+            "name": "openmc-agent"
+        },
+        {
+            "path": "../openmc",
+            "name": "openmc (upstream)"
+        },
+        {
+            "path": "../openmc-templates",
+            "name": "openmc-templates"
+        },
+        {
+            "path": "../openmc-validator-mcp",
+            "name": "openmc-validator-mcp"
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/__pycache__": true,
+            "**/.mypy_cache": true,
+            "**/.pytest_cache": true,
+            "**/.ruff_cache": true,
+            "**/node_modules": true
+        }
+    }
+}
