@@ -500,7 +500,7 @@ context:
 
 ### Phase 3: E2E Integration Test
 
-#### Task 1.4: 更新 benchmarks/README.md 目录
+#### ✅ Task 1.4: 更新 benchmarks/README.md 目录
 - **目标**：将 GODIVA 条目添加到 `benchmarks/README.md` 的 benchmark 目录表中
 - **依赖**：T1.1, T1.2, T1.3（依赖 GODIVA 文件的物理存在性）
 - **input_contracts**：

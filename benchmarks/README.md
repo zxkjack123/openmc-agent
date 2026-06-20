@@ -4,12 +4,12 @@ This directory contains validated OpenMC benchmark definitions for the evaluatio
 
 ## Catalog
 
-| ID | Name | Category | Geometry | Key Metric | Reference |
-|----|------|----------|----------|------------|-----------|
-| `godiva` | GODIVA bare sphere | criticality | CSG | k-eff = 0.9992 | ICSBEP HEU-MET-FAST-001 |
-| `pwr-pin` | PWR pin-cell | criticality | CSG | k-inf | OECD/NEA LWR benchmarks |
-| `iter-tbm` | ITER TBM first wall | fusion | CSG | TBR, nuclear heating | FENDL benchmark |
-| `fusion-blanket` | Generic fusion blanket | fusion | CSG | TBR, flux spectra | OpenMC fusion examples |
+| Name | Category | Geometry | Source | Status |
+|------|----------|----------|--------|--------|
+| GODIVA | criticality | CSG | ICSBEP HEU-MET-FAST-001 | ✅ implemented |
+| PWR Pin Cell | criticality | CSG | — | ⬜ planned |
+| ITER TBM | fusion | CSG | — | ⬜ planned |
+| Fusion Blanket | fusion | CSG | — | ⬜ planned |
 
 ## Structure
 
