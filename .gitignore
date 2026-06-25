@@ -44,6 +44,11 @@ benchmarks/**/*.png
 benchmarks/**/*.svg
 benchmarks/**/evaluation.md
 
+# opencode runtime
+.opencode/node_modules/
+.opencode/package.json
+.opencode/package-lock.json
+
 # Project management (private)
 .pm-project
 .pm-project.json

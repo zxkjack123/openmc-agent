@@ -1,0 +1,152 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "username": "openmc-dev",
+  "instructions": [
+    "CONSTITUTION.md",
+    "openmc-agent.agent.md",
+    "instructions/openmc-evaluation.instructions.md"
+  ],
+  "skills": {
+    "paths": [
+      ".opencode/skills",
+      "skills"
+    ]
+  },
+  "references": {
+    "openmc": {
+      "path": "/home/gw/opt/openmc",
+      "description": "Use for OpenMC Monte Carlo core codebase (C++/Python). Reference for source code, API, tests, and build system."
+    },
+    "openmc-templates": {
+      "path": "/home/gw/opt/openmc-templates",
+      "description": "Use for OpenMC model templates and validated material compositions. Reference for simulation input construction."
+    },
+    "openmc-validator": {
+      "path": "/home/gw/opt/openmc-validator-mcp",
+      "description": "Use for OpenMC model validation MCP server. Reference for geometry/materials/settings/tallies validation logic."
+    },
+    "openmc-plotter": {
+      "path": "/home/gw/opt/plotter",
+      "description": "Use for OpenMC native plotting GUI, model design and verification patterns."
+    },
+    "openmc-data": {
+      "path": "/home/gw/opt/data",
+      "description": "Use for nuclear cross-section data management scripts and NJOY/HDF5 processing for OpenMC."
+    },
+    "openmc-mcnp-adapter": {
+      "path": "/home/gw/opt/openmc_mcnp_adapter",
+      "description": "Use for converting MCNP input files to OpenMC classes/XML. Reference for geometry/material/tally mapping patterns."
+    },
+    "openmc-serpent-adapter": {
+      "path": "/home/gw/opt/openmc_serpent_adapter",
+      "description": "Use for converting Serpent input files to OpenMC. Reference for Serpent-to-OpenMC geometry and material mapping."
+    },
+    "openmc-cad-adapter": {
+      "path": "/home/gw/opt/openmc_cad_adapter",
+      "description": "Use for converting OpenMC CSG geometry to CAD formats. Reference for CSG-to-CAD export patterns."
+    },
+    "openmc-validation": {
+      "path": "/home/gw/opt/validation",
+      "description": "Use for OpenMC validation scripts, notebooks, and benchmark results. Reference for V&V methodology."
+    },
+    "openmc-notebooks": {
+      "path": "/home/gw/opt/openmc-notebooks",
+      "description": "Use for example Jupyter notebooks demonstrating OpenMC usage patterns and API workflows."
+    },
+    "openmc-reactor-examples": {
+      "path": "/home/gw/opt/openmc-reactor-examples",
+      "description": "Use for cataloged reactor input models for OpenMC. Reference for reactor geometry and depletion setups."
+    },
+    "openmc-plasma-source": {
+      "path": "/home/gw/opt/openmc-plasma-source",
+      "description": "Use for creating OpenMC plasma source objects from fusion plasma parameters. Reference for DT neutron source sampling."
+    },
+    "openmc-dagmc-wrapper": {
+      "path": "/home/gw/opt/openmc-dagmc-wrapper",
+      "description": "Use for DAGMC geometry integration with OpenMC. Reference for CAD-based geometry tallies and workflow patterns."
+    },
+    "neutronics-material-maker": {
+      "path": "/home/gw/opt/neutronics_material_maker",
+      "description": "Use for making reproducible material cards for neutronics codes. Reference for material density and composition handling."
+    },
+    "cad-to-dagmc": {
+      "path": "/home/gw/opt/cad_to_dagmc",
+      "description": "Use for converting CAD (STEP/STP) files or CadQuery assemblies to DAGMC h5m files. Reference for geometry preparation pipeline."
+    },
+    "openmc-weight-window-generator": {
+      "path": "/home/gw/opt/openmc_weight_window_generator",
+      "description": "Use for generating weight windows for variance reduction in OpenMC. Reference for VR workflow patterns."
+    },
+    "openmc-mesh-tally-to-vtk": {
+      "path": "/home/gw/opt/openmc_mesh_tally_to_vtk",
+      "description": "Use for converting OpenMC mesh tallies to VTK files for visualization. Reference for post-processing patterns."
+    },
+    "openmc-cell-segmenter": {
+      "path": "/home/gw/opt/openmc_cell_segmenter",
+      "description": "Use for segmenting OpenMC cells into smaller cells. Reference for SDR (shutdown dose rate) geometry preparation."
+    },
+    "fusion-activation-handbook": {
+      "path": "/home/gw/opt/fusion_activation_handbook",
+      "description": "Use for automated production of fusion materials activation handbook using OpenMC. Reference for activation/decay heat/dose simulation patterns."
+    },
+    "neutronics-workshop": {
+      "path": "/home/gw/opt/neutronics-workshop",
+      "description": "Use for fusion neutronics workshop materials covering OpenMC, DAGMC, Paramak workflows. Reference for teaching and tutorial patterns."
+    },
+    "pydagmc": {
+      "path": "/home/gw/opt/pydagmc",
+      "description": "Use for Python interface to DAGMC models via PyMOAB. Reference for DAGMC metadata manipulation and h5m inspection."
+    },
+    "parastell": {
+      "path": "/home/gw/opt/parastell",
+      "description": "Use for parametric 3D modeling of stellarator fusion devices. Reference for stellarator geometry and DAGMC build patterns."
+    },
+    "r2s-act": {
+      "path": "/home/gw/opt/r2s-act",
+      "description": "Use for Rigorous 2-Step activation workflow. Reference for coupling OpenMC transport with activation calculations."
+    },
+    "radial-build-tools": {
+      "path": "/home/gw/opt/radial_build_tools",
+      "description": "Use for building and representing radial builds for fusion power systems. Reference for blanket/shield geometry definition."
+    },
+    "ALARA": {
+      "path": "/home/gw/opt/ALARA",
+      "description": "Use for simulation of transmutation and decay in nuclear systems. Reference for activation calculation methodology and data formats."
+    },
+    "DAGMC": {
+      "path": "/home/gw/opt/DAGMC",
+      "description": "Use for Direct Accelerated Geometry Monte Carlo Toolkit. Reference for CAD-based geometry tracking, ray tracing, and h5m file format."
+    },
+    "paramak": {
+      "path": "/home/gw/opt/paramak",
+      "description": "Use for creating parametric 3D fusion reactor CAD and neutronics models. Reference for parametric geometry build and STEP/DAGMC export."
+    }
+  },
+  "permission": {
+    "edit": "ask",
+    "bash": {
+      "git *": "allow",
+      "python *": "allow",
+      "pip *": "allow",
+      "conda *": "allow",
+      "pytest *": "allow",
+      "mypy *": "allow",
+      "ruff *": "allow",
+      "ls *": "allow",
+      "cat *": "allow",
+      "openmc *": "allow",
+      "*": "ask"
+    },
+    "external_directory": {
+      "*": "allow"
+    }
+  },
+  "tool_output": {
+    "max_lines": 200,
+    "max_bytes": 8192
+  },
+  "compaction": {
+    "auto": true,
+    "tail_turns": 15
+  }
+}
