@@ -6,30 +6,47 @@ Thanks for your interest in contributing! This project aims to build a pure open
 
 1. Clone this repo alongside the required dependencies:
    ```bash
-   git clone https://github.com/your-org/openmc-agent.git
+   git clone https://github.com/zxkjack123/openmc-agent.git
    git clone https://github.com/openmc-dev/openmc.git
    git clone https://github.com/openmc-dev/openmc-templates.git
-   git clone https://github.com/your-org/openmc-validator-mcp.git
+   git clone https://github.com/zxkjack123/openmc-validator-mcp.git
    ```
 
 2. Open `openmc-agent.code-workspace` in VS Code.
 
-3. Run the contract tests:
+3. Run the tests:
    ```bash
    cd openmc-agent
-   pip install pyyaml pytest
-   pytest tests/test_agent_contract.py -v
+   pip install pyyaml pytest h5py
+   pytest tests/ -v -k "not slow"   # contract + fast E2E
+   ```
+
+4. Run the full suite (requires OpenMC installed + cross sections):
+   ```bash
+   export OPENMC_CROSS_SECTIONS=/path/to/cross_sections.xml
+   pytest tests/ -v                  # all 14 tests
    ```
 
 ## Areas to Contribute
 
 | Area | Description | Priority |
 |------|-------------|----------|
-| **Benchmarks** | Add real `model.py` + `benchmark.yaml` to `benchmarks/` | High |
+| **SLURM backend** | Implement `SlurmExecutor` in `backends/` per the backend contract | High |
+| **Benchmarks** | Add new `model.py` + `benchmark.yaml` to `benchmarks/` | Medium |
 | **openmc-input-repair** | Extend the repair table in the SKILL.md with more error→fix mappings | Medium |
-| **Backend executors** | Implement `LocalExecutor` and `SlurmExecutor` in `backends/` | High |
-| **E2E tests** | Integration tests with real OpenMC execution | Medium |
+| **E2E tests** | Add integration tests for new benchmarks | Medium |
 | **Pluggable KB** | Documentation/skill for optional knowledge-base tools | Low |
+
+## Current Benchmarks
+
+| Benchmark | Category | Key Metric | Status |
+|-----------|----------|-----------|--------|
+| GODIVA | criticality | k_eff | ✅ |
+| PWR Pin Cell | criticality | k_eff | ✅ |
+| Concrete Penetration | shielding | flux attenuation | ✅ |
+| Liquid Breeder Blanket | fusion | TBR | ✅ |
+
+New benchmarks should follow `benchmarks/<category>/<name>/` with `benchmark.yaml`, `model.py`, and `README.md`.
 
 ## Guidelines
 

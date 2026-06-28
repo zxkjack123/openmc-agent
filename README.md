@@ -6,6 +6,9 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![OpenMC](https://img.shields.io/badge/OpenMC-%E2%89%A5%200.14-blue)](https://docs.openmc.org/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-purple)](https://modelcontextprotocol.io)
+[![CI](https://github.com/zxkjack123/openmc-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/zxkjack123/openmc-agent/actions/workflows/ci.yml)
+[![Tests](https://img.shields.io/badge/tests-14%2F14%20passed-brightgreen)]()
+[![Benchmarks](https://img.shields.io/badge/benchmarks-4%2F4%20implemented-brightgreen)]()
 
 `openmc-agent` is a VS Code Copilot Chat agent that builds, validates, runs,
 and post-processes [OpenMC](https://docs.openmc.org/) Monte Carlo simulations.
@@ -90,25 +93,59 @@ openmc-agent/
 ├── README.md                # This file
 ├── LICENSE                  # MIT
 ├── CHANGELOG.md
+├── .opencode/               # opencode IDE config (agents, commands, skills)
 ├── instructions/
 │   └── openmc-evaluation.instructions.md  # Evaluation feedback loop
 ├── skills/
 │   ├── openmc-benchmark-runner/SKILL.md   # Benchmark execution
 │   └── openmc-input-repair/SKILL.md       # Validation repair
 ├── backends/
-│   └── README.md            # Backend reference (local, slurm, scnet)
+│   ├── README.md            # Backend reference (local, slurm, scnet)
+│   └── local_executor.py    # Local execution backend
 ├── benchmarks/
-│   └── README.md            # Benchmark catalog index
+│   ├── README.md            # Benchmark catalog (4 implemented)
+│   ├── criticality/godiva/  # GODIVA bare sphere (ICSBEP)
+│   ├── criticality/pwr-pin-cell/  # PWR pin-cell (OECD/NEA)
+│   ├── shielding/concrete-penetration/  # Concrete slab (ORNL)
+│   └── fusion/liquid-breeder-blanket/   # LiPb breeder blanket
 ├── docs/
 │   ├── architecture.md
 │   ├── benchmark-protocol.md
 │   └── evaluation-framework.md
 ├── tests/
-│   └── test_agent_contract.py
+│   ├── test_agent_contract.py    # 10 contract tests
+│   └── test_e2e_godiva_pipeline.py  # 4 pipeline tests (1 slow)
+├── .github/workflows/
+│   └── ci.yml                # GitHub Actions CI
 ├── scripts/
 │   └── check_tool_budget.py
 └── memories/repo/
     └── workflow-patterns.md
+```
+
+## Benchmarks
+
+| Benchmark | Category | Key Metric | Reference | Status |
+|-----------|----------|-----------|-----------|--------|
+| GODIVA | criticality | k_eff = 0.9992 ± 200 pcm | ICSBEP HEU-MET-FAST-001 | ✅ |
+| PWR Pin Cell | criticality | k_eff ≈ 1.175 ± 500 pcm | OECD/NEA | ✅ |
+| Concrete Penetration | shielding | flux attenuation ≈ 0.01 | ORNL | ✅ |
+| Liquid Breeder Blanket | fusion | TBR ≈ 1.15 ± 10% | OpenMC examples | ✅ |
+
+## Test Status
+
+| Suite | Count | Status |
+|-------|-------|--------|
+| Contract | 10 | ✅ 10/10 pass |
+| E2E Pipeline | 4 | ✅ 4/4 pass (1 slow) |
+| Tool Budget | 1 | ✅ 20/25 |
+
+```bash
+# Run all non-slow tests
+pytest tests/ -v -k "not slow"
+
+# Run full suite (requires OpenMC + cross sections)
+pytest tests/ -v
 ```
 
 ## Dependencies
@@ -145,4 +182,4 @@ MIT — see [LICENSE](LICENSE).
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) (coming soon).
+See [CONTRIBUTING.md](CONTRIBUTING.md).
