@@ -7,9 +7,9 @@ This directory contains validated OpenMC benchmark definitions for the evaluatio
 | Name | Category | Geometry | Source | Status |
 |------|----------|----------|--------|--------|
 | GODIVA | criticality | CSG | ICSBEP HEU-MET-FAST-001 | ✅ implemented |
-| PWR Pin Cell | criticality | CSG | — | ⬜ planned |
-| ITER TBM | fusion | CSG | — | ⬜ planned |
-| Fusion Blanket | fusion | CSG | — | ⬜ planned |
+| PWR Pin Cell | criticality | CSG | OECD/NEA benchmarks | ✅ implemented |
+| Concrete Penetration | shielding | CSG | ORNL benchmarks | ✅ implemented |
+| Liquid Breeder Blanket | fusion | CSG | OpenMC examples | ✅ implemented |
 
 ## Structure
 

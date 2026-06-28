@@ -1,0 +1,22 @@
+name: "liquid-breeder-blanket"
+category: "fusion"
+description: >
+  Simplified 1D slab model of a Li17Pb83 liquid breeder blanket for fusion
+  applications. 14.1 MeV D-T fusion neutrons impinge on a 60 cm breeder zone
+  backed by a reflector. Li-6 enrichment at 90% for tritium breeding.
+geometry: "CSG"
+source: "OpenMC fusion blanket examples"
+metrics:
+  TBR:
+    reference: 1.15
+    tolerance_pct: 10
+settings:
+  particles: 20000
+  batches: 50
+  inactive: 10
+cross_sections: "ENDF/B-VIII.0"
+notes: >
+  TBR ~1.15 is a physically plausible value for a well-designed liquid breeder
+  blanket with 90% Li-6 enrichment and a neutron multiplier/reflector.
+  Actual TBR depends on detailed geometry, material composition, and Li-6
+  enrichment. 10% tolerance accommodates 1D slab approximation vs. full 3D.

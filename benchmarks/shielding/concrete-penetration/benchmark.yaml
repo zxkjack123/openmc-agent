@@ -1,0 +1,23 @@
+name: "concrete-penetration"
+category: "shielding"
+description: >
+  Point neutron source behind a 50 cm concrete slab. Neutron flux tallied as a
+  function of penetration depth to verify shielding attenuation behavior. This
+  is a simplified analog of the ORNL concrete penetration benchmarks.
+geometry: "CSG"
+source: "ORNL shielding benchmarks"
+metrics:
+  flux_attenuation:
+    reference: 0.01
+    tolerance_pct: 20
+settings:
+  particles: 50000
+  batches: 20
+  inactive: 5
+cross_sections: "ENDF/B-VIII.0"
+notes: >
+  Reference value is the approximate flux attenuation factor (50 cm / 0 cm)
+  for 2 MeV neutrons through ordinary concrete (~2.3 g/cm³). The 20% tolerance
+  accounts for simplified geometry and material approximations.
+  Primary purpose: verify shielding flux attenuation follows exponential decay
+  with physically plausible attenuation length.

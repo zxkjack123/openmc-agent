@@ -1,0 +1,23 @@
+name: "pwr-pin-cell"
+category: "criticality"
+description: >
+  Single PWR fuel pin in square lattice with reflective boundary conditions.
+  UO2 fuel at 3.3 wt% enrichment, Zircaloy-4 cladding, water moderator/coolant.
+  This is the canonical LWR criticality verification problem and one of the
+  most widely-used OpenMC benchmark configurations.
+geometry: "CSG"
+source: "OECD/NEA PWR pin-cell benchmarks"
+metrics:
+  k_eff:
+    reference: 1.175
+    tolerance_pcm: 500
+settings:
+  particles: 10000
+  batches: 100
+  inactive: 30
+cross_sections: "ENDF/B-VIII.0"
+notes: >
+  Reference k_eff ≈1.175 is approximate for this configuration with ENDF/B-VIII.0.
+  Actual value depends on cross-section library version and temperature treatment.
+  This benchmark serves as a sanity check that OpenMC produces physically plausible
+  criticality results for a representative LWR configuration.
